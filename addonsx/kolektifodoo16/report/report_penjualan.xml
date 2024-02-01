@@ -35,32 +35,32 @@
                         <table class="table" style="width: 100%;">
                         <h3 style="padding-top: 100pt; text-align: center;">DETAIL PENJUALAN MAKANAN</h3>
                             <tr>
-                                <td>Nama Makanan</td>
-                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.restomakanan_id.name"/></td>
+                                <th>Nama Minuman</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
                             </tr>
-                            <tr>
-                                <td>Quantity</td>
-                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.qty"/></td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td><span t-field="pj.restodetailpenjualanmakanan_ids.subtotal"/></td>
-                            </tr>
+                            <t t-foreach="pj.restodetailpenjualanmakanan_ids" t-as="detail">
+                                <tr>
+                                    <td><span t-field="detail.restomakanan_id.name"/></td>
+                                    <td><span t-field="detail.qty"/></td>
+                                    <td><span t-field="detail.subtotal"/></td>
+                                </tr>
+                            </t>
                         </table>
                         <table class="table" style="width: 100%;">
-                        <h3 style="padding-top: 100pt; text-align: center;">DETAIL PENJUALAN MINUMAN</h3>
+                            <h3 style="padding-top: 100pt; text-align: center;">DETAIL PEMBELIAN MINUMAN</h3>
                             <tr>
-                                <td>Nama Makanan</td>
-                                <td><span t-field="pj.restodetailpenjualanminuman_ids.restominuman_id.name"/></td>
+                                <th>Nama Minuman</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
                             </tr>
-                            <tr>
-                                <td>Quantity</td>
-                                <td><span t-field="pj.restodetailpenjualanminuman_ids.qty"/></td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td><span t-field="pj.restodetailpenjualanminuman_ids.subtotal"/></td>
-                            </tr>
+                            <t t-foreach="pj.restodetailpenjualanminuman_ids" t-as="detail">
+                                <tr>
+                                    <td><span t-field="detail.restominuman_id.name"/></td>
+                                    <td><span t-field="detail.qty"/></td>
+                                    <td><span t-field="detail.subtotal"/></td>
+                                </tr>
+                            </t>
                         </table>
                     </div>
                 </t>
